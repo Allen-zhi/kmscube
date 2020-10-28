@@ -32,6 +32,9 @@
 #include "common.h"
 #include "drm-common.h"
 
+WEAK union gbm_bo_handle
+gbm_bo_get_handle_for_plane(struct gbm_bo *bo, int plane);
+
 WEAK uint64_t
 gbm_bo_get_modifier(struct gbm_bo *bo);
 
@@ -75,15 +78,16 @@ struct drm_fb * drm_fb_get_from_bo(struct gbm_bo *bo)
 	height = gbm_bo_get_height(bo);
 	format = gbm_bo_get_format(bo);
 
-	if (gbm_bo_get_modifier && gbm_bo_get_plane_count &&
-	    gbm_bo_get_stride_for_plane && gbm_bo_get_offset) {
+	if (gbm_bo_get_handle_for_plane && gbm_bo_get_modifier &&
+	    gbm_bo_get_plane_count && gbm_bo_get_stride_for_plane &&
+	    gbm_bo_get_offset) {
 
 		uint64_t modifiers[4] = {0};
 		modifiers[0] = gbm_bo_get_modifier(bo);
 		const int num_planes = gbm_bo_get_plane_count(bo);
 		for (int i = 0; i < num_planes; i++) {
+			handles[i] = gbm_bo_get_handle_for_plane(bo, i).u32;
 			strides[i] = gbm_bo_get_stride_for_plane(bo, i);
-			handles[i] = gbm_bo_get_handle(bo).u32;
 			offsets[i] = gbm_bo_get_offset(bo, i);
 			modifiers[i] = modifiers[0];
 		}
