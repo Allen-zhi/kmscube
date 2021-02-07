@@ -564,7 +564,12 @@ static void draw_cube_tex(unsigned i)
 	if (gl.mode == NV12_2IMG)
 		glUniform1i(gl.textureuv, 1);
 
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, 24);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	glDrawArrays(GL_TRIANGLE_STRIP, 4, 4);
+	glDrawArrays(GL_TRIANGLE_STRIP, 8, 4);
+	glDrawArrays(GL_TRIANGLE_STRIP, 12, 4);
+	glDrawArrays(GL_TRIANGLE_STRIP, 16, 4);
+	glDrawArrays(GL_TRIANGLE_STRIP, 20, 4);
 }
 
 const struct egl * init_cube_tex(const struct gbm *gbm, enum mode mode, int samples)
