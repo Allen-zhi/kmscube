@@ -310,7 +310,7 @@ int init_drm(struct drm *drm, const char *device, const char *mode_str,
 		drm->crtc_id = encoder->crtc_id;
 	} else {
 		uint32_t crtc_id = find_crtc_for_connector(drm, resources, connector);
-		if (crtc_id == 0) {
+		if (crtc_id == -1) {
 			printf("no crtc found!\n");
 			return -1;
 		}
