@@ -1,0 +1,12 @@
+Package: kmscube-dbgsym
+Source: kmscube
+Version: 0.0.0~git20210103-1
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Maintainer: Guido Günther <agx@sigxcpu.org>
+Installed-Size: 104
+Depends: kmscube (= 0.0.0~git20210103-1)
+Section: debug
+Priority: optional
+Description: debug symbols for kmscube
+Build-Ids: c1ba447146ffa7963bd6862ea0ce9b7cd217809f

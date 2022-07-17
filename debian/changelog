@@ -1,0 +1,35 @@
+kmscube (0.0.0~git20210103-1) unstable; urgency=medium
+
+  * New upstream git snapshot
+    (Closes: #961794)
+  * d/control: Build-depend on meson.
+    now be used as a build system
+  * d/control: Build-depend on libpng-dev
+  * d/control: Add explicit glib-2.0 build-dep
+  * d/control: Bump standards version to 4.5.1
+  * Switch to dh 13
+  * debian: Add salsa-ci
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 03 Jan 2021 15:42:37 +0100
+
+kmscube (0.0.0~git20170617-2) unstable; urgency=medium
+
+  [ Guido Günther ]
+  * [c49cc28] Add Vcs-* URLs
+
+  [ Nicolas Dechesne ]
+  * [7ab1ee1] debian: Add Build-Depends on Gstreamer to enable video support
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 06 Jul 2018 19:11:01 +0200
+
+kmscube (0.0.0~git20170617-1) unstable; urgency=medium
+
+  * New upstream snapshot
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 27 Jun 2018 18:17:35 +0200
+
+kmscube (0.0.0~git20170508-1) unstable; urgency=medium
+
+  * Initial release (Closes: #886648)
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 08 Jan 2018 11:49:45 +0100

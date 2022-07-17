@@ -1,0 +1,13 @@
+Package: kmscube
+Version: 0.0.0~git20210103-1
+Architecture: arm64
+Maintainer: Guido Günther <agx@sigxcpu.org>
+Installed-Size: 1494
+Depends: libc6 (>= 2.17), libdrm2 (>= 2.4.75), libegl1, libgbm1 (>= 17.1.0~rc2), libgles2, libglib2.0-0 (>= 2.16.0), libgstreamer-plugins-base1.0-0 (>= 1.6.0), libgstreamer1.0-0 (>= 1.0.0)
+Section: graphics
+Priority: optional
+Homepage: https://cgit.freedesktop.org/mesa/kmscube/
+Description: Example KMS/GBM/EGL application
+ kmscube is an example application that displays a rotating cube to
+ demonstrate the usage of KMS, GBM and EGL. It can be used to
+ test kernel mode setting and Mesas DRM drivers.
