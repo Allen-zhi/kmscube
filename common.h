@@ -175,7 +175,18 @@ enum mode {
 
 const struct egl * init_cube_smooth(const struct gbm *gbm, int samples);
 const struct egl * init_cube_tex(const struct gbm *gbm, enum mode mode, int samples);
+
+#ifdef HAVE_GLES3
 const struct egl * init_cube_shadertoy(const struct gbm *gbm, const char *shadertoy, int samples);
+#else
+static inline const struct egl *
+init_cube_shadertoy(const struct gbm *gbm, const char *shadertoy, int samples)
+{
+	(void)gbm; (void)shadertoy; (void)samples;
+	printf("no GLES3 support!\n");
+	return NULL;
+}
+#endif
 
 #ifdef HAVE_GST
 
