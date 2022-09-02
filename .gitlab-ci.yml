@@ -9,7 +9,7 @@
 
 latest-meson:
   stage: build
-  image: archlinux/base:latest
+  image: archlinux:base
   artifacts: *artifacts-meson
   before_script:
     - pacman -Syu --noconfirm --needed
