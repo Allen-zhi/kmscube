@@ -9,11 +9,10 @@
 
 latest-meson:
   stage: build
-  image: archlinux:base
+  image: archlinux:base-devel
   artifacts: *artifacts-meson
   before_script:
     - pacman -Syu --noconfirm --needed
-        base-devel
         meson
         libdrm
         mesa
